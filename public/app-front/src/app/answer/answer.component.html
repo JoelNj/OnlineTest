@@ -1,0 +1,58 @@
+
+
+<h1 margin="10px" class="text-5xl font-extrabold dark:text-white">Create New  Answer </h1>
+<p class="text-4xl font-thin text-gray-900 dark:text-white"><strong>Question : </strong>{{questionText}}</p>
+<button type="button" class="text-white bg-gradient-to-br
+    from-purple-600 to-blue-500 hover:bg-gradient-to-bl 
+    focus:ring-4 focus:outline-none 
+    focus:ring-blue-300 
+    dark:focus:ring-blue-800 
+    font-medium rounded-lg 
+    text-sm px-5 py-2.5 text-center mr-2 mb-2" routerLink="/questions">
+    Go to questions's List
+</button>
+
+<button type="button" class="text-white bg-gradient-to-br
+    from-purple-600 to-blue-500 hover:bg-gradient-to-bl 
+    focus:ring-4 focus:outline-none 
+    focus:ring-blue-300 
+    dark:focus:ring-blue-800 
+    font-medium rounded-lg 
+    text-sm px-5 py-2.5 text-center mr-2 mb-2" [routerLink]="['/listanswer',questionId]">
+
+    
+    Go to Answers List for this question
+</button>
+<section class="bg-white dark:bg-gray-900">
+    <div class="py-8 px-4 mx-auto max-w-2xl lg:py-16">
+        <form (ngSubmit)="sendData()" [formGroup]="formAnswer"  >
+            <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+                <div class="sm:col-span-2">
+                    <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Question Text</label>
+                    <textarea id="description" formControlName="answerText" rows="8" class="block p-2.5 w-full 
+                    text-sm text-gray-900 bg-gray-50 
+                    rounded-lg border border-gray-300 
+                    focus:ring-primary-500 focus:border-primary-500
+                     dark:bg-gray-700 dark:border-gray-600 
+                     dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" 
+                     placeholder="Your question text here..." formControlName="answerText">
+                    </textarea>
+                </div><br>
+                <div class="flex items-center mb-4">
+                    <input id="default-radio-1" type="radio"   formControlName="answerIsValid" value="true" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                    <label for="default-radio-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">true</label><br>
+                    <input checked id="default-radio-2" type="radio" formControlName="answerIsValid" value="false" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                    <label for="default-radio-2" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">false</label>
+                </div><br>
+                <button type="submit" class="text-white bg-gradient-to-r from-cyan-500 
+                to-blue-500 hover:bg-gradient-to-bl focus:ring-4 
+                focus:outline-none focus:ring-cyan-300 
+                dark:focus:ring-cyan-800 font-medium r
+                ounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                Save
+            </button>
+            </div>
+        </form>
+    </div>
+  </section>
+
